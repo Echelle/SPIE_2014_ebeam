@@ -1,12 +1,13 @@
 # SPIE 2014 paper on e-beam lithography of Si gratings
 
-This is a paper on e-beam lithography applied to Si diffraction gratings.
+High Performance Si Immersion Gratings Patterned with Electron Beam Lithography
 
 ### Authors
 
 * Michael Gully-Santiago, University of Texas at Austin, Dept. of Astronomy
 * Dan Jaffe, University of Texas at Austin, Dept. of Astronomy
 * Dan Wilson, NASA JPL Microdevices Laboratory
+* Richard Muller, NASA JPL Microdevices Laboratory
 
 ### Compiling
 
