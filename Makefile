@@ -1,29 +1,32 @@
-all: SPIE_2014_ebeam.ps
+all: SPIE_2014_ebeam.pdf
 
-%.ps: %.tex
-	latex SPIE_2014_ebeam
+%.pdf: %.tex
+	pdflatex $<
+	bash -c " ( grep Rerun $*.log && pdflatex $< ) || echo noRerun "
+	bash -c " ( grep Rerun $*.log && pdflatex $< ) || echo noRerun "
+	pdflatex $<
 	bibtex SPIE_2014_ebeam
-	latex SPIE_2014_ebeam
-	latex SPIE_2014_ebeam
-	dvips SPIE_2014_ebeam.dvi -P pdf
-	mv SPIE_2014_ebeam.ps final/
+	pdflatex SPIE_2014_ebeam
+	pdflatex SPIE_2014_ebeam
+	mv SPIE_2014_ebeam.pdf final/
 	mv SPIE_2014_ebeam.tex final/
-	rm *.bbl
-	rm *.aux
-	rm *.log
-	rm *.blg
-	rm *.dvi
-	latexdiff-so old/SPIE_20140214_MGS.tex final/SPIE_2014_ebeam.tex > SPIE_2014_ebeam.tex
-	latex SPIE_2014_ebeam
+	rm -rf *Notes.bib
+	rm -rf *.bbl
+	rm -rf *.log
+	rm -rf *.blg
+	rm -rf *.dvi
+	latexdiff old/SPIE_20140405_ebeam.tex final/SPIE_2014_ebeam.tex > SPIE_2014_ebeam.tex
+	pdflatex SPIE_2014_ebeam
+	pdflatex SPIE_2014_ebeam
 	bibtex SPIE_2014_ebeam
-	latex SPIE_2014_ebeam
-	latex SPIE_2014_ebeam
-	dvips SPIE_2014_ebeam.dvi -P pdf	
-	rm *.bbl
-	rm *.aux
-	rm *.log
-	rm *.blg
-	rm *.dvi
-	mv SPIE_2014_ebeam.ps final/diff.ps
+	pdflatex SPIE_2014_ebeam
+	pdflatex SPIE_2014_ebeam
+	rm -rf *Notes.bib
+	rm -rf *.bbl
+	rm -rf *.aux
+	rm -rf *.log
+	rm -rf *.blg
+	rm -rf *.dvi
+	mv SPIE_2014_ebeam.pdf diff.pdf
 	cp final/SPIE_2014_ebeam.tex .
-	
+	mv diff.pdf final/diff.pdf
