@@ -63,9 +63,28 @@ We also discuss the tradeoffs of long write-time serial write processes like e-b
 \section{INTRODUCTION}
 \label{sec:intro}  % \label{} allows reference to this section
 
-At the last SPIE meeting we described the detailed performance of the solitary immersion grating (part number CA-1 \cite{2012SPIE.8450E..2SG}) for the high resolution infrared spectrograph IGRINS \cite{2010SPIE.7735E..54Y}.  IGRINS saw first light at McDonald Observatory on March 15, 2014.  Papers describing its performance appear in the current volume.  The technical readiness of the immersion grating now rests on firm footing, and our group has now moved on to pushing the performance and design limitations of silicon optics.  The key limitation is the immersion grating phase coherence.  Phase coherence for a diffraction grating is the extent to which repeated grating facets are positioned to the an integer value of $\sigma$, the groove constant.  Specifically, the position, $x$ of the $n^{th}$ facet in a sequence of $N$ total facets is distributed as $x = n\sigma + \epsilon$, where $\epsilon_n$ is the position error for facet $n$.  Discussion of the phase performance can be broadly separated into phase errors on large scale (low order aberrations), and small scale (spectral ghosts and grass).  In Section \ref{sec}
+At the last SPIE meeting we described the detailed performance of the solitary immersion grating (part number CA-1 \cite{2012SPIE.8450E..2SG}) for the high resolution infrared spectrograph IGRINS \cite{2010SPIE.7735E..54Y}.  IGRINS saw first light at McDonald Observatory on March 15, 2014.  Papers describing its performance appear in the current volume.  The technical readiness of the immersion grating now rests on firm footing, and our group has now moved on to pushing the performance and design limitations of silicon optics.  The key limitation is the immersion grating phase coherence.  Phase coherence for a diffraction grating is the extent to which repeated grating facets are positioned to the an integer value of $\sigma$, the groove constant (the desired constant spacing from groove to groove).  Specifically, the position, $x$ of the $n^{th}$ facet in a sequence of $N$ total facets is distributed as: 
 
-\section{IGRINS first light affirms technical readiness of Si immersion gratings}
+\begin{eqnarray}
+x_n = n\sigma + \epsilon_n  \ref{eqn:Epsilon}
+\end{eqnarray}
+
+where $\epsilon_n$ is the position error for facet $n$.  Discussion of the phase performance can be broadly separated into phase errors on large scale (low order aberrations), and small scale (spectral ghosts and grass).
+
+\section{On-sky performance of Si immersion grating}
+IGRINS \cite{2010SPIE.7735E..54Y} is a high resolution near-infrared astronomical spectrograph.  It employs an immersion grating as its primary dispersive element, and two cryogenic VPH gratings for cross-dispersion.  The instrument covers a wavelength range of 1.5$-$2.5 $\mu$m in two channels, namely the $H-$ and $K-$ atmospheric windows.  The design and early performance of IGRINS is described in this volume \cite{2014SPIE.CHANPARK.IGRINS} [talk 9147-48].  The immersion grating for IGRINS is part number CA-1.  Its lab-measured performance is summarized in \cite{2012SPIE.8450E..2SG}.  In this section we briefly summarize the performance of the immersion grating on-sky.
+
+The immersion grating is performing as specified.  IGRINS has no performance limitation attributable to the immersion grating.  Ongoing tests might be able to answer questions about the mechanics and geometry of the grating.  What is the mechanical robustness in the cryogenic environment?  Is the part surviving regular thermal cycling?  Is the AR coating degrading over time?  What is the delivered blaze angle?  Specifically, can the in-instrument echellogram yield a tighter constraint on the blaze angle than previous lab measurements?
+
+One major open question is whether CA-1 meets its spectral ghost level specification.  Spectral ghosts are secondary images which arise from periodic facet positioning errors\cite{2007sdf..book.....J}. The ghosts in CA-1 where introduced from a cyclically varying position-dependent exposure dose in the UV photolithography patterning step.  The error causing the ghosts has since been eliminated.  As a result our most recent immersion gratings prototypes show a dramatic reduction in spectral ghosts\cite{2014SPIE.BROOKS.GRATINGS} [talk number 9151-35].  Spectral ghosts have the following sinusoidal error distribution:
+
+\begin{eqnarray}
+	\epsilon_n = A\sin{\frac{2\Pi x}{P}} \ref{eqn:Periodic}
+\end{eqnarray}
+
+where $\epsilon_n$ is introduced in Equation \ref{eqn:Epsilon}, $x$ is the position perpendicular to the grooves, $A$ is the amplitude of the error, and $P$ is the period of the periodic error.  We address spectral ghosts arising from e-beam lithography in Sections \ref{sec:Field}, \ref{sec:Boundaries}, and  \ref{sec:Ghosts}.  
+
+
 \section{Motivations for direct writing Si immersion gratings}
 \subsection{Higher precision than contact lithography}
 \subsection{Finer groove pitch limitation than contact lithography}
@@ -74,8 +93,11 @@ At the last SPIE meeting we described the detailed performance of the solitary i
 \subsubsection{e-beam step size and spot size}
 \subsubsection{Subfield deflector}
 \subsubsection{Field deflector}
+\label{sec:Field}
 \subsubsection{Interplay of hierarchy at boundaries}
+\label{sec:Boundaries}
 \subsection{Predicting the ghost level associated with field positioning errors}
+\label{sec:Ghosts}
 \subsection{Employ multiple fields sizes rather than one field size}
 \subsection{Is there a need for multiple cross-dispersion field sizes?}
 \section{Strategies for mitigating facet position errors attributable to large scale stage drift}
