@@ -15,7 +15,7 @@ all: SPIE_2014_ebeam.pdf
 	rm -rf *.log
 	rm -rf *.blg
 	rm -rf *.dvi
-	latexdiff old/SPIE_20140405_ebeam.tex final/SPIE_2014_ebeam.tex > SPIE_2014_ebeam.tex
+	latexdiff-so old/SPIE_20140405_ebeam.tex final/SPIE_2014_ebeam.tex > SPIE_2014_ebeam.tex
 	pdflatex SPIE_2014_ebeam
 	pdflatex SPIE_2014_ebeam
 	bibtex SPIE_2014_ebeam
