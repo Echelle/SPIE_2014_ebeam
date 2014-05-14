@@ -69,14 +69,14 @@ At the last SPIE meeting we described the detailed performance of the solitary i
 x_n = n\sigma + \epsilon_n  \label{eqn:Epsilon}
 \end{eqnarray}
 
-where $\epsilon_n$ is the position error for facet $n$.  Discussion of the phase performance can be broadly separated into phase errors on large scale (low order aberrations), and small scale (spectral ghosts and grass).
+where $\epsilon_n$ is the position error for facet $n$.  Discussion of the phase performance can be broadly separated into position errors on large scale (low order aberrations), and small scale (spectral ghosts and grass).
 
 \section{On-sky performance of Si immersion grating}
 IGRINS \cite{2010SPIE.7735E..54Y} is a high resolution near-infrared astronomical spectrograph.  It employs an immersion grating as its primary dispersive element, and two cryogenic VPH gratings for cross-dispersion.  The instrument covers a wavelength range of 1.5$-$2.5 $\mu$m in two channels, namely the $H$ and $K$ atmospheric windows.  The design and early performance of IGRINS is described in this volume [talk 9147-48]\cite{2014SPIE.CHANPARK.IGRINS}.  The immersion grating for IGRINS is internal part number CA-1.  Its lab-measured performance is summarized in Gully-Santiago et al. 2012\cite{2012SPIE.8450E..2SG}.  In this section we briefly summarize the performance of the immersion grating on-sky.
 
 The immersion grating is performing as specified.  IGRINS has no measured performance limitation attributable to the immersion grating.  CA-1 is diffraction limited.  CA-1 has been thermally cycled about 6 times at the time of writing, with no perceptible degradation in performance.  We expect no degradation from thermal cycling.  We have previously constrained the CA-1 blaze angle to $\delta = 71.5\pm 0.2^\circ$.  In principle, we can improve our constraint on the delivered grating blaze angle from the observed echellogram.  This calculation has not been performed.
 
-One major open question is whether CA-1 meets its spectral ghost level specification.  Spectral ghosts are secondary images which arise from periodic facet positioning errors\cite{2007sdf..book.....J}. The ghosts in CA-1 where introduced from a cyclically varying position-dependent exposure dose in the UV photolithography patterning step.  The error causing the ghosts has since been eliminated.  As a result our most recent immersion gratings prototypes show a dramatic reduction in spectral ghosts [this volume, talk number 9151-35]\cite{2014SPIE.BROOKS.GRATINGS}.  Spectral ghosts have the following sinusoidal error distribution:
+One major open question is whether CA-1 meets its spectral ghost level specification.  Spectral ghosts are secondary images which arise from periodic facet positioning errors\cite{2007sdf..book.....J}. The ghosts in CA-1 where introduced from a cyclically varying position-dependent exposure dose in the UV photolithography patterning step.  The processing error causing the ghosts has since been eliminated.  As a result our most recent immersion grating prototypes show a dramatic reduction in spectral ghosts [this volume, talk number 9151-35]\cite{2014SPIE.BROOKS.GRATINGS}.  Spectral ghosts have the following sinusoidal error distribution:
 
 \begin{eqnarray}
 	\epsilon_n = A\sin{\frac{2\pi n\sigma}{P}} \label{eqn:Periodic}
@@ -90,8 +90,15 @@ where $I_g/I_0$ is the ghost level relative to the main peak, $\lambda/n$ is the
 
 
 \section{Motivations for direct writing Si immersion gratings}
+There are a few key motivations for adopting e-beam direct writing over conventional contact photolithography.  
+
 \subsection{Higher precision than contact lithography}
-\subsection{Finer groove pitch limitation than contact lithography}
+Electron beam lithography is more precise than contact lithography.  The figure of merit for precision in e-beam lithography is the so called \emph{spot size}, the typical diameter of the e-beam pulse at the location of the e-beam sensitive resist on the substrate surface.  E-beam spot sizes on the JEOL 9300FS tool can be as low as 2 nm.  Admittedly the e-beam current at a 2 nm spot size is prohibitively low.  In practice, a 200 nm spot size is used.  The final precision is a small fraction of the spot size, since many adjacent spots are convolved together.  In later sections we directly compare the performance of immersion gratings produced with e-beam and contact lithography to show evidence that we have achieved much higher precision in e-beam lithography.  
+
+\subsection{Finer groove pitch capability than contact lithography}
+Owing to its small achievable spot size, electron beam lithography can reach finer groove spacings than contact photolithography can.  Fine pitches are required for high dispersion in low order.  Our groups are currently designing a fine ($\sigma \; \sim$ 2 $\mu$m) pitch pattern immersion grating for the NASA Earth Science Technology Office (ESTO) Advanced Component Technologies (ACT) program.  The ACT mission concept requires high spectral resolution at low order ($\sim1-10$).  The grating pattern designs employing first or second diffraction order cannot be made with contact lithography.  Higher order devices can be made with contact lithography, but suffer from order overlap and reduced bandwidth.  The reduced bandwidth limits conceivable designs to less than about $16^{th}$ order.  The combined background at high order overlap is a concern.  For a narrow band filter with 0.1\% off-band rejection, we can expect to see up to 1\% background level.  A first order grating with fine pitch eliminates the need for narrow band filtration, and should achieve much lower than 1\% background levels.  
+
+
 \section{e-beam patterning strategies}
 \subsection{e-beam patterning geometry hierarchy}
 \subsubsection{e-beam step size and spot size}
