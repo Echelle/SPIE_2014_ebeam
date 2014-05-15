@@ -108,10 +108,10 @@ This section explains the e-beam patterning strategies.  Specifically, we explai
 \begin{figure}
 \begin{center}
  \begin{tabular}{c}
-    \includegraphics[width=0.8\textwidth]{Field_sizes_cascade_02.png}
+    \includegraphics[width=0.8\textwidth]{figs/Field_sizes_cascade_02.png}
    \end{tabular}
   \end{center}
-  \caption[CA1a Efficiency]{\label{fig:Hierarchy} Hierarchy of e-beam geometries- in the left panel the grooves are black and the fields are thin blue lines, the middle inset shows subfields, and the right inset shows spots at a regular step spacing.  Spots are the smallest quantum of e-beam dose}
+  \caption[CA1a Efficiency]{\label{fig:Hierarchy} Hierarchy of e-beam geometries- in the left panel the grooves are black and the fields are thin blue lines, the middle inset shows subfields, and the right inset shows spots at a regular step spacing, though the spots are not to scale.  Spot sizes are typically about 4-5 times their spacing.}
 \end{figure}
 
 
@@ -127,26 +127,39 @@ The conductive aperture setting coarsely selects the range of spot size achievab
 A key idea is that the step size (50 nm) is much smaller than the spot size ($\sim200$ nm) so that adjacent steps convolve to form a fairly uniform exposure area.  Another key assumption is that the e-beam spot does not change significantly over the course of an exposure.  Our experience is that the e-beam spot is unchanged, so long as the e-beam column is unperturbed.
 
 \subsubsection{Subfield deflector}
-The subfield deflector is a component of the e-beam gun that minutely redirects the e-beam spot within a box of up to 4 $\mu$m edge, centered around a mean position.  We selected a $4 \; \mu$m spot for our immersion gratings with coarse grooves ($\sim 27-80 \; \mu$m).  For recent work on fine pitch ($\sim2\; \mu$m) gratings we have experimented with smaller subfield sizes.
+The subfield deflector is a component of the e-beam gun that minutely redirects the e-beam spot within a box of up to 4 $\mu$m edge, centered around a mean position.  We selected a $4 \; \mu$m spot for our immersion gratings with coarse grooves ($\sim 27-80 \; \mu$m).  For recent work on fine pitch ($\sim2\; \mu$m) gratings we have experimented with smaller subfield sizes.  For example, the choice of subfield size of $4 \; \mu$m square has 80 \times 80 steps of 50 nm each. 
 
 \subsubsection{Field deflector}
 \label{sec:Field}
-The field deflector, also sometimes called the main-field deflector, coarsely redirects the center of the electron beam up to a 500 $\mu$m square.  The main-field deflector can be thought as positioning the center of the subfields.  For example, the choice of a 500 $\mu$m square field size and 4 $\mu$m square field size would result in 125 $\times$ 125 subfields.
+The field deflector, also sometimes called the main-field deflector, coarsely redirects the electron beam up to a 500 $\mu$m square.  The main-field deflector can be thought as positioning the center of the subfields.  For example, the choice of a 500 $\mu$m square field size and 4 $\mu$m square field size would result in 125 $\times$ 125 subfields.
 
 The fields are stepped together by the interferometrically controlled stage.  Once an entire field's pattern has been written, the stage steps to the next adjacent field to write.  The stage move speed is typically much slower than the field and subfield deflector speed, so small field sizes are inefficient in time-on-target time compared to wall-clock time.  The performance of the field deflector degrades with distance from the center (e.g. pincushion distortion), so there is a tradeoff between write speed and performance.  
 
-The choice of field size is multifaceted.  Field size choice is one of the key strategies for mitigation of ghosts.  One important idea is that the field size is only a few times larger than our typical immersion grating groove constants.  We define the ratio, $G$, as the field size, $F$, divided by the groove pitch size, $\sigma$.  For example, let's say we have a field size $F\;=\;500\;\mu$m and a groove constant $\sigma \; =\; 100 \; \mu$m.  Then $G\;=\;5$.  So there will be 5 grooves per field.  The omnipresent field deformations will be rubber stamped into each field, repeating every 5 grooves.  The cyclically varying facet positions manifest as ghosts with G-fold symmetry. We expect $G-1$ inter-order ghosts, separated by a fraction $1/G$ of the inter-order separation.  For the $G\;=\;5$ example, there are 4 inter order ghosts, separated by a fifth of the order angular separation.  In Section \ref{sec:MultipleFields} we describe our strategy for mitigating power by distributing the power into multiple fields.
+The choice of field size is multifaceted.  Field size choice is one of the key strategies for mitigation of ghosts.  We address the issue of field size choice in detail in Section \ref{Ghosts}.  
 
 \subsubsection{Interplay of hierarchy at boundaries and design rules}
 \label{sec:Boundaries}
-The e-beam geometries must match up at the boundaries.  We learned many subtle design rules unique to high performance immersion gratings.  In this subsection we motivate and explain the design rules.
+The e-beam geometries must match up at the boundaries.  We learned many subtle design rules unique to high performance immersion gratings.  The main theme in all of the design rules is to avoid fractional steps in the writing process.  The JEOL pattern generation software inserts patterns of spaces and spots when it reaches a command for a fractional step.  The specific design rules below are probably unique to the JEOL pattern generation software.  Other e-beam tool software is likely to have different design rules.
+\begin{enumerate}
+  \item Subfields must be integer number of steps
+  \item Fields should be integer number of subfields.  
+  \item Linewidth should be an integer number of subfields.
+  \item Field sizes and linewidths can be non-integer number of subfields only if the remainder fractional subfield plus one subfield divided by two is an integer number of step sizes.
+\end{enumerate}   
 
-The subfield size must be an integer number of steps.  For example, our choice of subfield size of $4 \; \mu$m has 80 steps of 50 nm each.  The reason for this requirement is that a fractional step is not possible, so the line-edge of contiguous spots would lack a solitary spot near the subfield boundary.  Such a periodic dearth in exposure would manifest as a periodic facet position error along the length of a groove.  The detailed impact on optical phase depends on the relative step size, resist sensitivity, and sundry subsequent processing steps.  Rather than risk a performance degradation it is best practice to avoid the formation of subfield blips in the first place.  
+These rules ensure that all e-beam spots are equidistant.  Figure \ref{fig:Hierarchy}  shows the JEOL \emph{shot shape display} which broke rule 2 and 4.  Metrology of a grating prototype that broke rule 2 and 4 resulted in unacceptably large grating ghosts in the cross-dispersion direction.  The line-edge of contiguous spots lacked a solitary spot near the subfield boundary.  Such a periodic dearth in exposure manifested as a periodic divot along the length of the groove.  The detailed impact on optical phase depends on the relative step size, e-beam sensitive resist contrast, and sundry subsequent processing steps.  Rather than risk a performance degradation it is best practice to avoid the formation of subfield blips in the first place.  The main concern for a final application is probably scattered light, and not efficiency loss. 
 
 \subsection{Predicting the ghost level associated with field positioning errors}
 \label{sec:Ghosts}
+
+The field size is only a few times larger than our typical coarse echelle grating groove constants.  We define the ratio, $G$, as the field size, $F$, divided by the groove pitch size, $\sigma$.  For example, let's say we have a field size $F\;=\;500\;\mu$m and a groove constant $\sigma \; =\; 100 \; \mu$m.  Then $G\;=\;5$.  So there will be 5 grooves per field.  The omnipresent field deformations will be rubber stamped into each field, repeating every 5 grooves.  The cyclically varying facet positions manifest as ghosts with G-fold symmetry. We expect $G-1$ inter-order ghosts, separated by a fraction $1/G$ of the inter-order separation.  For the $G\;=\;5$ example, there are 4 inter order ghosts, separated by a fifth of the order angular separation.  In Section \ref{sec:MultipleFields} we describe our strategy for mitigating power by distributing the power into multiple fields.
+
+In principle it is possible to predict the ghost levels relative to the main diffraction peak with some information about the magnitude and shape of the field distortion.  For example, in the limit of perfect field positioning (i.e. with identically zero error, $\epsilon_n(x,y)$), then there are no grating ghosts.  As the amplitude of the field distortion is dialed up, the grating ghost level increases approximately as Equation \ref{eqn:GLevel}.  In practice, we have not directly measured the field distortion, which we expect to be a function of both $x $ and $y$.  We have, however, measured the ghost levels.  
+
 \subsection{Employ multiple fields sizes rather than one field size}
 \label{sec:MultipleFields}
+
+
 \subsection{Is there a need for multiple cross-dispersion field sizes?}
 \section{Strategies for mitigating facet position errors attributable to large scale stage drift}
 \subsection{Characterization of e-beam stage drift}
