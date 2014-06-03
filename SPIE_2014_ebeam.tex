@@ -113,7 +113,7 @@ This section explains the e-beam patterning strategies.  Specifically, we explai
     \includegraphics[width=0.8\textwidth]{figs/Field_sizes_cascade_02.png}
    \end{tabular}
   \end{center}
-  \caption[CA1a Efficiency]{\label{fig:Hierarchy} Hierarchy of e-beam geometries- in the left panel the grooves are black and the fields are thin blue lines, the middle inset shows subfields, and the right inset shows spots at a regular step spacing, though the spots are not to scale.  Spot sizes are typically about 4-5 times their spacing.}
+  \caption[e-beam Hierarchy]{\label{fig:Hierarchy} Hierarchy of e-beam geometries- in the left panel the grooves are black and the fields are thin blue lines, the middle inset shows subfields, and the right inset shows spots at a regular step spacing, though the spots are not to scale.  Spot sizes are typically about 4-5 times their spacing.}
 \end{figure}
 
 
@@ -138,6 +138,15 @@ The field deflector, also sometimes called the main-field deflector, coarsely re
 The fields are stepped together by the interferometrically controlled stage.  Once an entire field's pattern has been written, the stage steps to the next adjacent field to write.  The stage move speed is typically much slower than the field and subfield deflector speed, so small field sizes are inefficient in time-on-target time compared to wall-clock time.  The performance of the field deflector degrades with distance from the center (e.g. pincushion distortion), so there is a tradeoff between write speed and performance.  
 
 The choice of field size is multifaceted.  Field size choice is one of the key strategies for mitigation of ghosts.  We address the issue of field size choice in detail in Section \ref{Ghosts}.  
+
+\begin{figure}
+\begin{center}
+ \begin{tabular}{c}
+    \includegraphics[width=0.96\textwidth]{figs/subfields_TJ04_Zeiss.pdf}
+   \end{tabular}
+  \end{center}
+  \caption[TJ04 under Zeiss]{\label{fig:TJ04Zeiss} Subfield and field boundaries directly perceptible in optical microscopy of the e-beam resist on an intentionally underexposed sample.  The blue area is the linewidth portion of the grating which has e-beam resist already exposed to e-beam.  The orange line is the groove top, where the e-beam resist was unexposed and will serve as the groove top.  The minute colors differences within the exposed linewidth are attributable to tiny thickness differences of the resist, which originate from tiny differences in delivered e-beam dose.  The cylindrically symmetric color difference of teal to dark blue is attributable to the proximity effect as described elsewhere (Ref XX Wilson+).  The tiny boxes are subfields, which are only perceptible due to subtle subfield stitching errors.  Some some fields are more errant than others.  The thick horizontal stripe is a portion of a much larger field boundary, perceptible only because of main-field deflector stitching boundaries as discussed in the text.}
+\end{figure}
 
 \subsubsection{Interplay of hierarchy at boundaries and design rules}
 \label{sec:Boundaries}
@@ -176,7 +185,16 @@ Lastly, there are some slightly obscure JEOL e-beam commands relevant to ghost m
 
 \subsection{Measurement of ghost levels for a variety of writing strategies}
 \label{sec:MeasGhost}
-In Figure XX we show measurements of inter order ghosts for grating XX.  Table XX shows the grating properties. 
+In Figure \ref{fig:GhostLevelFig} we show measurements of inter order ghosts for experiments TJ03 and TJ04.  The grating pattern details are listed in Table XX.  
+
+\begin{figure}
+\begin{center}
+ \begin{tabular}{c}
+    \includegraphics[width=0.8\textwidth]{figs/TJ04_ghosts_pretty_alt.pdf}
+   \end{tabular}
+  \end{center}
+  \caption[Ghost level measurements]{\label{fig:GhostLevelFig} Measurements of the levels of inter-order ghosts for a variety of e-beam patterning strategies.  The levels are normalized to the brightest order.  A full order is shown, with the $x-$axis units normalized to an order spacing.  The grating prototype TJ04 is described in the text.}
+\end{figure}
 
 
 \subsection{Is there a need for multiple cross-dispersion field sizes?}
@@ -250,19 +268,19 @@ The collaboration for this project was between NASA JPL Microdevices Lab (MDL) a
 	\cline{5-5}
 	TJ10 & E12 & SIGRTTS10 & Sep 1, 2011 & R3 pattern, identical job definition file as SIGRTTST6, only added in a drift and current check every 10 minutes\\
 	\cline{5-5}
-	? & ? & SIGRTTS?? & Oct 3-7, 2011 & 80 $\mu$m pitch iSHELL pattern (on wafer) \\
+	? & Wafer & SIGRTTS?? & Oct 3-7, 2011 & 80 $\mu$m pitch iSHELL pattern (on wafer) \\
 	\cline{5-5}
-	? & ? & SIGRTTS?? & Mar 9- 15, 2012 & 80 $\mu$m pitch iSHELL pattern on 30 mm thick Si puck \\	
+	? & G09 & SIGRTTS?? & Mar 9- 15, 2012 & 80 $\mu$m pitch iSHELL pattern on 30 mm thick Si puck \\	
 	\cline{5-5}
 	? & Wafer & Negtest2 & Mar 13, 2012 & MaN-2405 process and adhesion tests, SEMs\\		
 	\cline{5-5}
-	? & ? & SIGRTTS?? & Jan 6-12, 2013 & 48.5 $\mu$m pitch iSHELL pattern (on wafer) \\		
+	? & Wafer & SIGRTTS?? & Jan 6-12, 2013 & 48.5 $\mu$m pitch iSHELL pattern (on wafer) \\		
 	\cline{5-5}
-	? & ? & SIGRTTS?? & Jan 6-12, 2013 & MaN-2405 test writes on wafer, SEMs\\
+	? & Wafer & Negtest2 & Jan 8, 2013 & MaN-2405 test writes on wafer: 500 - 3500 $\mu$C/cm$^2$, SEMs\\
 	\cline{5-5}
-	? & ? & SIGRTTS?? & Feb 11-15, 2013 & MaN-2405 12 $\times$ 16 mm$^2$ pattern wafer\\	
+	? & Wafer & SIGRTUT19 (verify) & Feb 11-15, 2013 & MaN-2405 12 $\times$ 16 mm$^2$ pattern wafer\\	
 	\cline{5-5}
-	? & ? & SIGRTTS?? & April 7-13, 2014 & G07 30 mm thick iSHELL 80 $\mu$m pattern\\
+	? & G07 & SIGRTUT15 & April 9, 2014 & 30 mm thick iSHELL 80 $\mu$m pattern\\
 	\hline
 	%\end{tabular}
 \end{longtable}
