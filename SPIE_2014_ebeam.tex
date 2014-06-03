@@ -14,6 +14,7 @@
 %  installations. 
 \usepackage[]{graphicx}
 \usepackage{longtable}
+\usepackage{subfig}
 \usepackage{lscape}
 
 \title{High Performance Si Immersion Gratings Patterned with Electron Beam Lithography} 
@@ -212,9 +213,35 @@ In Figure \ref{fig:GhostLevelFig} we show measurements of inter order ghosts for
 One key innovation of this work is the characterization of the e-beam stage drift.  Secular drift of the e-beam stage causes large scale facet position errors which manifest as optical aberrations.  In this section we explain how to measure and correct out the e-beam stage drift.
 
 \subsection{Characterization of e-beam stage drift}
+We characterized the e-beam stage drift with built-in JEOL commands in the .JDF file.  Specifically, we used the \emph{DRIFT} and \emph{CURRENT} commands.  The \emph{DRIFT} command checks the position of the stage by scanning a gold nanoparticle mounted to the stage.  The process ties the actual position to the predicted position to the precision of the nano particle's centroid, which is a small fraction of the 200 nm spot size.  We measured a precision of about 15 nm in the centroid process.  Having determined the amplitude and direction of the drift, the \emph{DRIFT} command subtracts out the offset and continues writing with its updated coordinates.
 
+The centroiding \emph{DRIFT} process can be automatically repeated on a desired frequency.  We set a frequency of 10 minutes.  For a typical 20 hour write we achieve 120 drift corrections.  The JEOL software logs these corrections, so we can reconstruct the path of the drift, had we not taken action to correct it.  Figure XX shows one of these reconstructions for sample E12.
+
+\begin{figure}
+\begin{center}
+ \begin{tabular}{c}
+    \includegraphics[width=0.4\textwidth]{figs/E12_drift_ebeam.png}
+   \end{tabular}
+  \end{center}
+  \caption[Drift amplitude]{\label{fig:ebeamDrift} The reconstructed drift of the JEOL 9300FS e-beam stage during the patterning of sample E12.  The write time was 20.9 hours, with drift samples every 10 minutes.  The $x$ and $y$ components are separated and plotted as a function of time.  The top curve is the $y$ drift.  The curves begin at 0 at time zero, and show a range of motion of $\Delta x = $ 206 nm and $\Delta y = $ 341 nm.  This amplitude of drift would have been catastrophic for a grating which has line edge specifications of $\lambda/10 \sim 60 $ nm for diffraction limited performance in $J-$ band.  The JEOL9300FS command \emph{DRIFT} automatically corrects out this drift, so the maximum realized drift is merely the minuscule difference that occurs over the 10 minute interval between corrections.  Figure XX shows a direct comparison of prototype gratings patterned with and without drift correction.  }
+\end{figure}
+
+
+
+ We do not know the reason for differences in predicted versus realized stage position, though we can speculate.  Our best lead is that there is thermal expansion attributable to heat conduction from the warm Si puck and holder unit into the stage.  Specifically, there is some evidence that the drift rate is largest at the beginning of the writing, perhaps while thermal equilibration is still happening.  The thermal probes on the stage lend some credibility to this idea, since the probes asymptote to constant value after a few hours.  Owing to this possibility, we recommend delaying the start of a write until the sample and holder have come into thermal equilibrium with the stage.  Beyond this thermal explanation, there are many conceivable reasons why there could be drift.  At some level we do not care, as long as we can correct it out sufficiently well.  The cost of correction is merely a hit in extended write time for the same written area, i.e. a decrease in efficiency.  We found roughly a 10\% overhead associated with drift checking.
 
 \subsection{Improvement in wavefront performance from drift correction}
+In Figures \ref{fig:E09igram} and \ref{fig:E12igram} we show the dramatic impact of drift correction on the performance of our Si gratings.
+
+\begin{figure}
+   \subfloat[E12 Interferogram]{\label{fig:E12igram}\includegraphics[height=5cm]{figs/E12_fig_scl2.pdf}}
+   \newline
+  \subfloat[E09 Interferogram]{\label{fig:E09igram}\includegraphics[height=5cm]{figs/E09_fig_scl2.pdf}}
+  \caption{Comparison of immersion grating surfaces on samples E09 and E12 measured with $\lambda = 632.8 $ nm interferometry.  The color scale is reported in fractions of waves of surface deviation.  The patterns on E09 and E12 are identical: $\sigma = $ 27.36 $\mu$m, with a 9.96 $\mu$m groove top.  The groove top is not shadowed in these measurements which are taken in reflection in air, but we assume the groove tops have negligible impact on the measured interferometry.  The interferometry is performed with a 25 mm circular beam, which is projected over an 80 mm $\times$ 25 mm ellipse at the R3 echelle blaze angle, $\delta = 71.5 ^\circ$.  The left panel is the measured interferometry.  The middle panel is a decomposition into the first $\sim 80$ Zernike terms.  The right panel is the residual.  E09 was written on May 4, 2011, E12 was written September 1, 2011.  The only difference between the samples is that E09 was written with \emph{DRIFT} and \emph{CURRENT} check protocols with the JEOL e-beam writing software.  The outcome is dramatic- E12 has $\sim 4$ times lower surface deformation than E09.  Note that the vertical color bars are on the same scale to ease visual comparison.}
+  \label{fig:igrams}
+\end{figure}
+
+
 \section{Limitations of direct writing Si immersion gratings}
 \subsection{Serial write process yields long write times}
 \subsection{Experiments with negative resist}
