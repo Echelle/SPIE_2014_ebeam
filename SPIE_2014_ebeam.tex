@@ -148,7 +148,7 @@ The choice of field size is multifaceted.  Field size choice is one of the key s
     \includegraphics[width=0.96\textwidth]{figs/subfields_TJ04_Zeiss.pdf}
    \end{tabular}
   \end{center}
-  \caption[TJ04 under Zeiss]{\label{fig:TJ04Zeiss} Subfield and field boundaries directly perceptible in optical microscopy of the e-beam resist on an intentionally underexposed sample.  The blue area is the linewidth portion of the grating which has e-beam resist already exposed to e-beam.  The orange line is the groove top, where the e-beam resist was unexposed and will serve as the wet etch dam.  The minute color differences within the exposed linewidth are attributable to tiny thickness differences of the resist, which originate from tiny differences in delivered e-beam dose.  The cylindrically symmetric color difference of teal to dark blue is attributable to the proximity effect as described elsewhere (Ref XX Wilson+).  The tiny boxes are subfields, which are only perceptible due to subtle subfield stitching errors.  Some fields are more errant than others.  The thick horizontal stripe is a portion of a much larger field boundary, perceptible only because of main-field deflector stitching boundaries as discussed in the text.}
+  \caption[TJ04 under Zeiss]{\label{fig:TJ04Zeiss} Subfield and field boundaries directly perceptible in optical microscopy of the e-beam resist on an intentionally underexposed sample, TJ04.  The groove pitch for this sample is 100 $\mu$m, with a 75 $\mu$m written linewidth.  The blue area is the linewidth portion of the grating which has e-beam resist already exposed to e-beam.  The orange line is the groove top, where the e-beam resist was unexposed and would have served as the wet etch dam, had the linewidth actually developed out.  The minute color differences within the exposed linewidth are attributable to tiny thickness differences of the resist, which originate from tiny differences in delivered e-beam dose.  The cylindrically symmetric color difference of teal to dark blue is attributable to the proximity effect as described elsewhere (Ref XX Wilson+).  The tiny boxes are subfields, which are only perceptible due to subtle subfield stitching errors.  Some fields are more errant than others.  The thick horizontal stripe is a portion of a much larger field boundary, perceptible only because of main-field deflector stitching boundaries as discussed in the text.}
 \end{figure}
 
 \subsubsection{Interplay of hierarchy at boundaries and design rules}
@@ -163,7 +163,9 @@ The e-beam geometries must match up at the boundaries.  We learned many subtle d
 
 These rules ensure that all e-beam spots are equidistant.  Figure \ref{fig:Hierarchy}  shows the JEOL \emph{shot shape display} which broke rule 2 and 4.  Metrology of a grating prototype that broke rule 2 and 4 resulted in unacceptably large grating ghosts in the cross-dispersion direction.  The line-edge of contiguous spots lacked a solitary spot near the subfield boundary.  Such a periodic dearth in exposure manifested as a periodic divot along the length of the groove.  The detailed impact on optical phase depends on the relative step size, e-beam sensitive resist contrast, and sundry subsequent processing steps.  Rather than risk a performance degradation it is best practice to avoid the formation of subfield blips in the first place.  The main concern for a final application is probably scattered light, and not efficiency loss. 
 
+
 \begin{table}
+	\begin{center}
 	\caption{D07 and E12 e-beam pattern details. \label{tab:D07andE12}}
 	\begin{tabular}{ccc}
 	\toprule
@@ -192,6 +194,7 @@ These rules ensure that all e-beam spots are equidistant.  Figure \ref{fig:Hiera
 	\cline{1-1}
 	\bottomrule
 	\end{tabular}
+	\end{center}
 \end{table}	
 
 
@@ -310,10 +313,23 @@ In Figures \ref{fig:E09igram} and \ref{fig:E12igram} we show the dramatic impact
 
 
 \section{Limitations of direct writing Si immersion gratings}
+Electron beam lithography outperforms UV contact mask photolithography, at least in terms of the important metric of large scale phase coherence.  There are tradeoffs in pursuing e-beam lithography over UV contact mask photolithography.  We highlight some of these tradeoffs here.
+
 \subsection{Serial write process yields long write times}
-\subsection{Experiments with negative resist}
+One key tradeoff is that e-beam lithography is a serial write process, whereas UV contact mask photolithography is a parallel write process.  A contact mask exposure takes about 1-2 minutes, whereas a e-beam exposure takes about 20 hours, for 30 mm $\times$ 80 mm patterns.  The problem is even worse if you scale to larger areas, for the next generation immersion gratings.  The high hourly expense of e-beam time makes the writing process the dominant expense over all other preparation steps, despite the high per-part cost of the large precision-oriented and optically polished monolithic Si pucks.  
+
 \subsection{Large per-part investment cost yields heightened process risk}
+In reality, the expensive e-beam writing process is not more expensive than procuring a custom high precision vendor-provided photomask.  E-beam lithography simply has a higher per-part risk than UV contact mask photolithography.  Processes after the e-beam step better be low-risk.  Specifically, the processes after exposure include: discharge layer removal, development, plasma etching, wet etching, and shaping.  We find that plasma etching responds differently to thick samples, probably due to the large difference in strike height and dielectric differences between vacuum and Si.  In one case, an overactive plasma etch burned away all the e-beam resist on a 30 mm thick Si sample.
+
+\subsection{Experiments with negative resist}
+There is an steep tradeoff in precision and write time.  There is not much way around this tradeoff except for one recent idea of replacing positive tone resist with negative tone resist.  Recently we have experimented with low order Si immersion gratings with groove pitches on the order of $2 \; \mu$m, and and groove tops on the order of 100 nm.   The small pitch and groove top require a small spot size, and therefore a small step size.  We decreased our step size from 50 nm to 10 nm.  This change alone drives up the write time by a factor of 25.  To counteract the otherwise impossibly high write time, we have experimented with negative tone resist.  Negative resist is cleared where the resist is unexposed, and remains only where the resist is exposed.  Since the fill factor of written to unwritten is a factor of 20, the negative resist makes possible the e-beam lithography of these fine pitch patterns.  
+
+In principle these gains from negative resist could be extended to immersion echelles.  Specifically our typically modus operandi has been to clear about 65\% of the open area for an R3 echelle, in order to avoid groove top shadowing in immersion \cite{2012SPIE.8450E..2SG}.  However we could write an exceptionally thin line in negative resist, so long as the line is thick enough to survive wet etching without disintegration.  We estimate that this threshold is about 5\% of the groove pitch.  
+
+
 \section{Conclusions}
+Electron beam lithography is now the highest precision technique for producing diffraction limited Silicon immersion gratings.  The one performance disadvantage is the high level Rowland ghosts attributable to field stitching.  These errors have been mitigated by breaking up the field sizes into several different field sizes, distributing the power among more inter-order ghosts of lower individual power.  We can achieve 10$^-3$ suppression with this multi-field technique.  Ultimately science requirements will have to drive the performance demand of immersion gratings to inform how low to push the inter-order ghost level.  The optimal geometries for e-beam fields, subfields, spots, and sizes are nuanced- we lay out rules that avoid repetitive errors.  One key innovation is the e-beam stage drift characterization and compensation.  The correction of stage drift resulted in a $>4\times$ reduction in peak to valley wavefront error in an R3 immersion echelle grating.  Future experiments with negative tone resists will probably decrease write time and increase performance.
+
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \appendix    %>>>> this command starts appendixes
