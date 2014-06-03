@@ -16,6 +16,8 @@
 \usepackage{longtable}
 \usepackage{subfig}
 \usepackage{lscape}
+\usepackage{booktabs}
+\usepackage{multirow}
 
 \title{High Performance Si Immersion Gratings Patterned with Electron Beam Lithography} 
 
@@ -161,6 +163,39 @@ The e-beam geometries must match up at the boundaries.  We learned many subtle d
 
 These rules ensure that all e-beam spots are equidistant.  Figure \ref{fig:Hierarchy}  shows the JEOL \emph{shot shape display} which broke rule 2 and 4.  Metrology of a grating prototype that broke rule 2 and 4 resulted in unacceptably large grating ghosts in the cross-dispersion direction.  The line-edge of contiguous spots lacked a solitary spot near the subfield boundary.  Such a periodic dearth in exposure manifested as a periodic divot along the length of the groove.  The detailed impact on optical phase depends on the relative step size, e-beam sensitive resist contrast, and sundry subsequent processing steps.  Rather than risk a performance degradation it is best practice to avoid the formation of subfield blips in the first place.  The main concern for a final application is probably scattered light, and not efficiency loss. 
 
+\begin{table}
+	\caption{D07 and E12 e-beam pattern details. \label{tab:D07andE12}}
+	\begin{tabular}{ccc}
+	\toprule
+	   &D07 & E12  \\
+	\midrule
+	substrate bias angle ($^\circ$) & 6.1 & 71.5 \\
+	pattern size (mm) & 39.0 x 39.664 & 29.696 x 84.816 \\
+	pitch ($\mu$m) & 7.8 & 27.36 \\
+	top width ($\mu$m) & 0.4 & 9.96 \\
+	line width ($\mu$m) & 7.4 & 17.40 \\
+	step size (nm) & 50 & 50 \\
+	steps per linewidth & 148 & 348 \\
+	subfield size ($\mu$m) & 3.7 & 2.9 \\
+	subfields per linewidth & 2 & 6 \\
+	steps per subfield & 74 & 58 \\
+	\cline{1-1}
+	 			      & 63: 491.4  & 17: 465.12 \\
+	grooves per $x-$field and & 61: 475.8 & 15: 410.4 \\
+	$x-$field sizes ($\mu$m) & 59: 460.2 & 13: 355.68 \\
+	 				        & 55: 429.0 & 11: 300.96 \\
+	\cline{1-1}					        
+	 			      & 134: 495.8  &   \\
+	subfields per $y-$field and & 133: 492.1 &   \\
+	$y-$field sizes ($\mu$m) & 131: 484.7 & 160: 464.0 \\
+	 				        & 127: 469.9 &   \\	
+	\cline{1-1}
+	\bottomrule
+	\end{tabular}
+\end{table}	
+
+
+
 \subsection{Predicting the ghost level associated with field positioning errors}
 \label{sec:Ghosts}
 
@@ -197,6 +232,27 @@ Lastly, there are some slightly obscure JEOL e-beam commands relevant to ghost m
 \label{sec:MeasGhost}
 In Figure \ref{fig:GhostLevelFig} we show measurements of inter order ghosts for experiments TJ03 and TJ04.  Each grating received a different treatment for e-beam field geometry.  The grating pattern details are listed in Table XX.  The first result is that virtually all ghosts are below 10$^{-3}$ of the main peak.  Some ghosts were expected but not detected (denoted ND in the plot legend).  The non-detections are probably related to instrumental limitations, though upper limits are not available.  
 
+\begin{table}
+	\caption{Wafer TJ04 pattern details.  \label{tab:TJ04details}}
+	\begin{tabular}{lllcccccccccc}
+	\toprule
+	 &   & & \multicolumn{10}{c}{Grating Area} \\
+	\cmidrule(l){4-13}
+	Geometry & & Unit & A  & B & C & D & E & F & G &  H &  I & J\\
+	\midrule
+	\multirow{2}{*}{Pattern length}& (x) & mm &  \multicolumn{10}{c}{15} \\
+	 & (y) & mm & \multicolumn{10}{c}{10} \\
+	Pitch && $\mu m$ & \multicolumn{6}{c |}{100} &\multicolumn{4}{c}{25}  \\
+	Linewidth && $\mu m$ & \multicolumn{6}{c |}{75} & \multicolumn{4}{c}{22.5}  \\
+	\multirow{2}{*}{Field}&(x) & $\mu m$ & 100 &  200 & 200 & 200 & 500 & Multi & 100 & 200 & 500 & Multi \\
+	&(y)& $\mu m$ & 500 & 500 & 100 & 250 &  500 & 500 & 500 & 500 &500 & 500\\
+	Subfield && $\mu m$ & 2.5 & 2.5 & 4.0 & 4.0 & 2.5 & 2.5 & 2.5 & 2.5 & 2.5 & 2.5 \\
+	Spot && nm & \multicolumn{10}{c}{$\sim300$} \\
+	Step && nm & \multicolumn{10}{c}{50} \\
+	\bottomrule
+	\end{tabular}
+\end{table}
+
 \begin{figure}
 \begin{center}
  \begin{tabular}{c}
@@ -231,13 +287,24 @@ The centroiding \emph{DRIFT} process can be automatically repeated on a desired 
  We do not know the reason for differences in predicted versus realized stage position, though we can speculate.  Our best lead is that there is thermal expansion attributable to heat conduction from the warm Si puck and holder unit into the stage.  Specifically, there is some evidence that the drift rate is largest at the beginning of the writing, perhaps while thermal equilibration is still happening.  The thermal probes on the stage lend some credibility to this idea, since the probes asymptote to constant value after a few hours.  Owing to this possibility, we recommend delaying the start of a write until the sample and holder have come into thermal equilibrium with the stage.  Beyond this thermal explanation, there are many conceivable reasons why there could be drift.  At some level we do not care, as long as we can correct it out sufficiently well.  The cost of correction is merely a hit in extended write time for the same written area, i.e. a decrease in efficiency.  We found roughly a 10\% overhead associated with drift checking.
 
 \subsection{Improvement in wavefront performance from drift correction}
-In Figures \ref{fig:E09igram} and \ref{fig:E12igram} we show the dramatic impact of drift correction on the performance of our Si gratings.
+In Figures \ref{fig:E09igram} and \ref{fig:E12igram} we show the dramatic impact of drift correction on the performance of our Si gratings.  The stark difference between wavefront performance with drift correction and without drift correction is the ``smoking gun'' that the e-beam must have drift correction enabled to achieve high performance diffraction limited performance.  At the time of writing we have produced and tested another immersion grating with even higher performance than E12.  We summarize the performance of e-beam produced gratings in comparison to their UV photolithographically produced counterparts in Figure XX.
 
 \begin{figure}
    \subfloat[E12 Interferogram]{\label{fig:E12igram}\includegraphics[height=5cm]{figs/E12_fig_scl2.pdf}}
    \newline
   \subfloat[E09 Interferogram]{\label{fig:E09igram}\includegraphics[height=5cm]{figs/E09_fig_scl2.pdf}}
   \caption{Comparison of immersion grating surfaces on samples E09 and E12 measured with $\lambda = 632.8 $ nm interferometry.  The color scale is reported in fractions of waves of surface deviation.  The patterns on E09 and E12 are identical: $\sigma = $ 27.36 $\mu$m, with a 9.96 $\mu$m groove top.  The groove top is not shadowed in these measurements which are taken in reflection in air, but we assume the groove tops have negligible impact on the measured interferometry.  The interferometry is performed with a 25 mm circular beam, which is projected over an 80 mm $\times$ 25 mm ellipse at the R3 echelle blaze angle, $\delta = 71.5 ^\circ$.  The left panel is the measured interferometry.  The middle panel is a decomposition into the first $\sim 80$ Zernike terms.  The right panel is the residual.  E09 was written on May 4, 2011, E12 was written September 1, 2011.  The only difference between the samples is that E09 was written with \emph{DRIFT} and \emph{CURRENT} check protocols with the JEOL e-beam writing software.  The outcome is dramatic- E12 has $\sim 4$ times lower surface deformation than E09.  Note that the vertical color bars are on the same scale to ease visual comparison.}
+  \label{fig:igrams}
+\end{figure}
+
+
+\begin{figure}
+  \begin{center}
+ \begin{tabular}{c}
+    \includegraphics[width=0.6\textwidth]{figs/PV_time_paper_2014.pdf}
+   \end{tabular}
+  \end{center}
+    \caption{Comparison of immersion grating performance over as a function of production date.  The vertical axis is the peak-to-valley surface error over a 25 mm circular beam.  When projected over the R3 echelle, the beam is an 80 mm $\times$ 25 mm ellipse.  The units on the vertical axis are waves of $\lambda = 632.8 $ nm.  The gratings do not all have the same periods- some are $\sigma = $ 27.36 $\mu$m (IGRINS HK pattern), some have 80 $\mu$m pitch (iSHELL LM pattern).  The measurements are taken in reflection in air.  We assume the exposed groove tops have negligible impact on the measured interferometry.  The production date is the actual or estimated date of the final process step, typically wet etching.  The most recent produced e-beam grating, G07, has the highest performance based on the metric of large scale phase coherence.  The recent gratings produced with UV contact masks are described in this volume \cite{2014SPIE.BROOKS.GRATINGS}.  }
   \label{fig:igrams}
 \end{figure}
 
