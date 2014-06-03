@@ -145,7 +145,7 @@ The choice of field size is multifaceted.  Field size choice is one of the key s
     \includegraphics[width=0.96\textwidth]{figs/subfields_TJ04_Zeiss.pdf}
    \end{tabular}
   \end{center}
-  \caption[TJ04 under Zeiss]{\label{fig:TJ04Zeiss} Subfield and field boundaries directly perceptible in optical microscopy of the e-beam resist on an intentionally underexposed sample.  The blue area is the linewidth portion of the grating which has e-beam resist already exposed to e-beam.  The orange line is the groove top, where the e-beam resist was unexposed and will serve as the groove top.  The minute colors differences within the exposed linewidth are attributable to tiny thickness differences of the resist, which originate from tiny differences in delivered e-beam dose.  The cylindrically symmetric color difference of teal to dark blue is attributable to the proximity effect as described elsewhere (Ref XX Wilson+).  The tiny boxes are subfields, which are only perceptible due to subtle subfield stitching errors.  Some some fields are more errant than others.  The thick horizontal stripe is a portion of a much larger field boundary, perceptible only because of main-field deflector stitching boundaries as discussed in the text.}
+  \caption[TJ04 under Zeiss]{\label{fig:TJ04Zeiss} Subfield and field boundaries directly perceptible in optical microscopy of the e-beam resist on an intentionally underexposed sample.  The blue area is the linewidth portion of the grating which has e-beam resist already exposed to e-beam.  The orange line is the groove top, where the e-beam resist was unexposed and will serve as the wet etch dam.  The minute color differences within the exposed linewidth are attributable to tiny thickness differences of the resist, which originate from tiny differences in delivered e-beam dose.  The cylindrically symmetric color difference of teal to dark blue is attributable to the proximity effect as described elsewhere (Ref XX Wilson+).  The tiny boxes are subfields, which are only perceptible due to subtle subfield stitching errors.  Some fields are more errant than others.  The thick horizontal stripe is a portion of a much larger field boundary, perceptible only because of main-field deflector stitching boundaries as discussed in the text.}
 \end{figure}
 
 \subsubsection{Interplay of hierarchy at boundaries and design rules}
@@ -163,7 +163,17 @@ These rules ensure that all e-beam spots are equidistant.  Figure \ref{fig:Hiera
 \subsection{Predicting the ghost level associated with field positioning errors}
 \label{sec:Ghosts}
 
-The field size is only a few times larger than our typical coarse echelle grating groove constants.  We define the ratio, $G$, as the field size, $F$, divided by the groove pitch size, $\sigma$.  For example, let's say we have a field size $F\;=\;500\;\mu$m and a groove constant $\sigma \; =\; 100 \; \mu$m.  Then $G\;=\;5$.  So there will be 5 grooves per field.  The omnipresent field deformations will be rubber stamped into each field, repeating every 5 grooves.  The cyclically varying facet positions manifest as ghosts with G-fold symmetry. We expect $G-1$ inter-order ghosts, separated by a fraction $1/G$ of the inter-order separation.  For the $G\;=\;5$ example, there are 4 inter order ghosts, separated by a fifth of the order angular separation.  In Section \ref{sec:MultipleFields} we describe our strategy for mitigating power by distributing the power into multiple fields.
+The field size is only a few times larger than our typical coarse echelle grating groove constants.  Figure \ref{fig:FieldCartoon} shows an exaggerated cartoon of the field size relative to grooves.  In a hypothetically perfect e-beam field stitch, the line positions are exactly as desired.  In reality there is some finite distortion, which is repeated each time the field is written into the e-beam resist.  We define the ratio, $G$, as the field size, $F$, divided by the groove pitch size, $\sigma$.  For example, let's say we have a field size $F\;=\;500\;\mu$m and a groove constant $\sigma \; =\; 100 \; \mu$m.  Then $G\;=\;5$.  So there will be 5 grooves per field.  The omnipresent field deformations will be rubber stamped into each field, repeating every 5 grooves.  The cyclically varying facet positions manifest as ghosts with G-fold symmetry. We expect $G-1$ inter-order ghosts, separated by a fraction $1/G$ of the inter-order separation.  For the $G\;=\;5$ example, there are 4 inter order ghosts, separated by a fifth of the order angular separation.  In Section \ref{sec:MultipleFields} we describe our strategy for mitigating power by distributing the power into multiple fields.
+
+
+\begin{figure}
+\begin{center}
+ \begin{tabular}{c}
+    \includegraphics[width=0.6\textwidth]{figs/Field_stitching_errors.pdf}
+   \end{tabular}
+  \end{center}
+  \caption[Field Stitching Error Cartoon]{\label{fig:FieldCartoon} An exaggerated cartoon to demonstrate the repetitive nature of field stitching.  A typical field size is about 300-500 $\mu$m on a side, and typical groove periods, $\sigma$, are about 20-100 $\mu$m.  There are only a few to tens of grooves per field.  The distortion shown in the cartoon is highly exaggerated, and in reality the calibration is much better than depicted.  Additionally, the morphology of the distortion is not well characterized.  We have depicted a parallelogram shape, though the realized morphology could be more like pincushion or barrel distortion.  The fields could also be perfectly square and simply misplaced in their center positions, still causing errors.  The details of the morphology might give rise to differing relative levels of harmonics, in a Fourier sense.  To put the scale in perspective, we coarsely estimate the repetitive position error amplitude A (cf. eq. \ref{eqn:Periodic}) as about 5-50 nm from experiments on e-beam wafers.  Compare this minuscule position error with the $\sim500 \; \mu$m field size, to see that the fractional position error is 1 part in $10^4$ or better.}
+\end{figure}
 
 In principle it is possible to predict the ghost levels relative to the main diffraction peak with some information about the magnitude and shape of the field distortion.  For example, in the limit of perfect field positioning (i.e. with identically zero error, $\epsilon_n(x,y)$), then there are no grating ghosts.  As the amplitude of the field distortion is dialed up, the grating ghost level increases approximately as Equation \ref{eqn:GLevel}.  In practice, we have not directly measured the field distortion, which we expect to be a function of both $x $ and $y$.  We have measured the ghost levels, and report them in Section \ref{sec:MeasGhost}.
 
@@ -182,10 +192,9 @@ Lastly, there are some slightly obscure JEOL e-beam commands relevant to ghost m
 \section{Prototype immersion gratings produced with e-beam patterning}
 
 
-
 \subsection{Measurement of ghost levels for a variety of writing strategies}
 \label{sec:MeasGhost}
-In Figure \ref{fig:GhostLevelFig} we show measurements of inter order ghosts for experiments TJ03 and TJ04.  The grating pattern details are listed in Table XX.  
+In Figure \ref{fig:GhostLevelFig} we show measurements of inter order ghosts for experiments TJ03 and TJ04.  Each grating received a different treatment for e-beam field geometry.  The grating pattern details are listed in Table XX.  The first result is that virtually all ghosts are below 10$^{-3}$ of the main peak.  Some ghosts were expected but not detected (denoted ND in the plot legend).  The non-detections are probably related to instrumental limitations, though upper limits are not available.  
 
 \begin{figure}
 \begin{center}
@@ -196,10 +205,15 @@ In Figure \ref{fig:GhostLevelFig} we show measurements of inter order ghosts for
   \caption[Ghost level measurements]{\label{fig:GhostLevelFig} Measurements of the levels of inter-order ghosts for a variety of e-beam patterning strategies.  The levels are normalized to the brightest order.  A full order is shown, with the $x-$axis units normalized to an order spacing.  The grating prototype TJ04 is described in the text.}
 \end{figure}
 
+%\subsection{Is there a need for multiple cross-dispersion field sizes?}
 
-\subsection{Is there a need for multiple cross-dispersion field sizes?}
 \section{Strategies for mitigating facet position errors attributable to large scale stage drift}
+
+One key innovation of this work is the characterization of the e-beam stage drift.  Secular drift of the e-beam stage causes large scale facet position errors which manifest as optical aberrations.  In this section we explain how to measure and correct out the e-beam stage drift.
+
 \subsection{Characterization of e-beam stage drift}
+
+
 \subsection{Improvement in wavefront performance from drift correction}
 \section{Limitations of direct writing Si immersion gratings}
 \subsection{Serial write process yields long write times}
