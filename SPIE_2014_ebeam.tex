@@ -74,20 +74,30 @@ At the last SPIE meeting we described the detailed performance of the solitary i
 x_n = n\sigma + \epsilon_n  \label{eqn:Epsilon}
 \end{eqnarray}
 
-where $\epsilon_n$ is the position error for facet $n$.  Discussion of the phase performance can be broadly separated into position errors on large scale (low order aberrations), and small scale (spectral ghosts and grass).
+where $\epsilon_n$ is the position error for facet $n$.  Discussion of the phase performance can be broadly separated by the correlations  of errors, $\epsilon_n$, and their impact on the monochromatic spectral purity.  
+
+
+There are large scale, smooth correlations:
+\begin{eqnarray}
+\epsilon_n = \epsilon_n(x, y) \label{eqn:smooth}
+\end{eqnarray}
+These errors manifest as low order optical aberrations and degrade the PSF and Strehl.  Operationally these smooth errors are the first $M$ Zernike polynomials, where $M < 200$.  There is the especially pernicious repetitive error:
+\begin{eqnarray}
+\epsilon_n = A\sin{\frac{2\pi n\sigma}{P} - \phi} \label{eqn:Periodic}
+\end{eqnarray}
+where $n\sigma$ is the desired position of the $n^{th}$ groove, $A$ is the amplitude of the error (e.g. in nm), and $P$ is the period of the error (e.g. in mm).  These errors manifest as sidelobes of the PSF called Rowland ghosts.  Although we have listed a single harmonic periodic error, any periodic structure can be broken into its Fourier components, so each of these Fourier components will be affiliated with a sidelobe Rowland ghost.  Lastly there are small scale random errors:
+\begin{eqnarray}
+\epsilon_n \sim \mathcal{N}(0, \sigma)
+\end{eqnarray}
+where $ \sim \mathcal{N}(0, \sigma)$ denotes that the error is normally distributed with mean zero and standard deviation $\sigma$.  This last type of error produces so-called spectral grass\cite{2007ApOpt..46.3400M}, which is scattered light filling the blaze.
+
 
 \section{On-sky performance of Si immersion grating}
 IGRINS \cite{2010SPIE.7735E..54Y} is a high resolution near-infrared astronomical spectrograph.  It employs an immersion grating as its primary dispersive element, and two cryogenic VPH gratings for cross-dispersion.  The instrument covers a wavelength range of 1.5$-$2.5 $\mu$m in two channels, namely the $H$ and $K$ atmospheric windows.  The design and early performance of IGRINS is described in this volume [talk 9147-48]\cite{2014SPIE.CHANPARK.IGRINS}.  The immersion grating for IGRINS is internal part number CA-1.  Its lab-measured performance is summarized in Gully-Santiago et al. 2012\cite{2012SPIE.8450E..2SG}.  In this section we briefly summarize the performance of the immersion grating on-sky.
 
 The immersion grating is performing as specified.  IGRINS has no measured performance limitation attributable to the immersion grating.  CA-1 is diffraction limited.  CA-1 has been thermally cycled about 6 times at the time of writing, with no perceptible degradation in performance.  We expect no degradation from thermal cycling.  We have previously constrained the CA-1 blaze angle to $\delta = 71.5\pm 0.2^\circ$.  In principle, we can improve our constraint on the delivered grating blaze angle from the observed echellogram.  This calculation has not been performed.
 
-One major open question is whether CA-1 meets its spectral ghost level specification.  Spectral ghosts are secondary images which arise from periodic facet positioning errors\cite{2007sdf..book.....J}. The ghosts in CA-1 where introduced from a cyclically varying position-dependent exposure dose in the UV photolithography patterning step.  The processing error causing the ghosts has since been eliminated.  As a result our most recent immersion grating prototypes show a dramatic reduction in spectral ghosts [this volume, talk number 9151-35]\cite{2014SPIE.BROOKS.GRATINGS}.  Spectral ghosts have the following sinusoidal error distribution:
-
-\begin{eqnarray}
-	\epsilon_n = A\sin{\frac{2\pi n\sigma}{P}} \label{eqn:Periodic}
-\end{eqnarray}
-
-where $\epsilon_n$ is introduced in Equation \ref{eqn:Epsilon}, $n\sigma$ is the desired position of the $n^{th}$ groove, $A$ is the amplitude of the error, and $P$ is the period of the error.  We address spectral ghosts arising from e-beam lithography in Sections \ref{sec:Field}, \ref{sec:Boundaries}, and  \ref{sec:Ghosts}.  The ghost level depends on the amplitude of the error (cf. Equation 14 of Marsh et al. 2007\cite{2007ApOpt..46.3400M}):
+One major open question is whether CA-1 meets its spectral ghost level specification.  Spectral ghosts are secondary images which arise from periodic facet positioning errors\cite{2007sdf..book.....J}. The ghosts in CA-1 where introduced from a cyclically varying position-dependent exposure dose in the UV photolithography patterning step.  The processing error causing the ghosts has since been eliminated.  As a result our most recent immersion grating prototypes show a dramatic reduction in spectral ghosts [this volume, talk number 9151-35]\cite{2014SPIE.BROOKS.GRATINGS}.  Spectral ghosts are distributed as \ref{eqn:Periodic}.  We address spectral ghosts arising from e-beam lithography in Sections \ref{sec:Field}, \ref{sec:Boundaries}, and  \ref{sec:Ghosts}.  The ghost level depends on the amplitude of the error (cf. Equation 14 of Marsh et al. 2007\cite{2007ApOpt..46.3400M}):
 \begin{eqnarray}
 	\frac{I_g}{I_0}=[ \frac{2\pi n}{\lambda}A \sin{\delta} ]^2	 \label{eqn:GLevel}
 \end{eqnarray}
