@@ -13,9 +13,7 @@
 %  e.g., [dvips], but that may be inappropriate for some LaTeX 
 %  installations. 
 \usepackage[]{graphicx}
-\usepackage{longtable}
 \usepackage{subfig}
-\usepackage{lscape}
 \usepackage{booktabs}
 \usepackage{multirow}
 
@@ -339,87 +337,6 @@ In principle these gains from negative resist could be extended to immersion ech
 
 \section{Conclusions}
 Electron beam lithography is now the highest precision technique for producing diffraction limited Silicon immersion gratings.  The one performance disadvantage is the high level Rowland ghosts attributable to field stitching.  These errors have been mitigated by breaking up the field sizes into several different field sizes, distributing the power among more inter-order ghosts of lower individual power.  We can achieve 10$^-3$ suppression with this multi-field technique.  Ultimately science requirements will have to drive the performance demand of immersion gratings to inform how low to push the inter-order ghost level.  The optimal geometries for e-beam fields, subfields, spots, and sizes are nuanced- we lay out rules that avoid repetitive errors.  One key innovation is the e-beam stage drift characterization and compensation.  The correction of stage drift resulted in a $>4\times$ reduction in peak to valley wavefront error in an R3 immersion echelle grating.  Future experiments with negative tone resists will probably decrease write time and increase performance.
-
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\appendix    %>>>> this command starts appendixes
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\section{Collaboration details} \label{sec:GSRP}
-The collaboration for this project was between NASA JPL Microdevices Lab (MDL) and UTexas Dept. of Astronomy.  Much of the work was conducted through a Graduate Student Research Fellowship Program (GSRP).  MGS worked at MDL during 12 individual visits to JPL.
-
-\begin{table}
-	\caption{MGS GSRP trip log.  Dates of trips }
-	\begin{tabular}{ccp{8cm}}
-	\hline
-	 Trip \# &Dates & Note\\
-	\hline
-	1 & Sep 29-Oct 8, 2010 & Initial process development tests \\
-	2 & January 5-15, 2011 & Multiple field size writing experiments\\
-	3 & May 1-7, 2011 & Practice RIE etching, made E09, Mimir designs, Mimir experiments on wafers\\	
-	4 & May 15-21, 2011 & Mimir grism writing 15.4 $\mu$m, discussion of stage drift in E09  \\	
-	5 & Aug 28-Sep 3, 2011 & Made D07 and E12, discussion of plasma etching tradeoffs, need for endpoint\\		
-	6 & Oct. 3 - 7, 2011 & C. Brooks visit, ACT funding and initial meetings, GMTNIRS CoDR dinner, Design 80 $\mu$m iSHELL pattern\\
-	7 & Mar 9- 15, 2012 & G09 patterning (subsequently failed), ACT fine pitch designs and negative resist MaN-2405 experiments\\
-	-  & Oct. 24- Nov. 1, 2012 & \emph{cancelled} due to e-beam tool failure \\
-	8 & Jan 6-12, 2013 & Retraining, Design and write of 48.5 $\mu$m iSHELL JHK pattern, MaN-2405 experiments\\
-	9 & Feb 11-15, 2013 & ACT 12 $\times$ 16 mm$^2$ pattern, Si-Si direct bonding experiments\\
-	10 & June 9- 22, 2013 & Interact with astronomers, talk to star formation lunch, Guyon meeting, 2-day ESTO group meeting, VG09-VS21 bonded samples\\
-	11 & April 7-13, 2014 & Trip with C. Brooks, writing of G07 with identical pattern as G09\\
-	\hline
-	\end{tabular}
-\end{table}
-
-
-
-\begin{landscape}
-\begin{longtable}{ccccp{8cm}}
-	%\centering     % optional, probably makes it look better to have it centered on the page
-	%\caption{Experiment log at MDL}
-	%\begin{tabular}{ccccp{8cm}}
-	\hline
-	 Experiment  &  Substrate  & JEOL  & Production  &  \\
-	  \# &   name & Job Name &  Date & Description \\
-	\hline
-	TJ01 & CZ wafer & SIGRTTST1 & October 1, 2010 & First wafer pattern identical to MIT grating pattern- two large patterns with 100 $\mu$m and 25 $\mu$m\\
-	\cline{5-5}
-	TJ02 & CZ wafer & SIGRTTST2 & October 3, 2010 & Second wafer- dose array checks for development \\
-	\cline{5-5}
-	TJ03 & CZ wafer & SIGRTTST3 & January 15, 2011 & 8 patterns with different field stitching strategies- 4 each for 100 $\mu$m and 25 $\mu$m pitches.  Wafer delaminated over 30\% of surface.\\	
-	\cline{5-5}
-	TJ04 & CZ wafer & SIGRTTST4 & January 16, 2011 & 10 patterns with different field stitching strategies- six 100 $\mu$m and four 25 $\mu$m pitches.  Experimenting with MULTI field stitching strategy\\	
-	\cline{5-5}
-	TJ05 & back of E04 & SIGRTTST5 & May 3, 2011 & Some dose arrays and pattern stitching practice on the coarse-polished back of a dummy thick piece (E04), also used for ICP practice on thick substrate\\	
-	\cline{5-5}
-	TJ06 & E09 & SIGRTTST6 & May 4, 2011 & R3 IGRINS clone pattern: 27.36 $\mu$m pitch over a 80 x 30 mm pattern, written with 4 different $x-$field sizes.  Has two sets of dose arrays.\\	
-	\cline{5-5}
-	TJ07 & CZ wafer & SIGRTTST7 & May 5, 2011 & Four different patterns, one for each of the contacted grisms project- 13.6, 15.4, 30.0, and 7.8 $\mu$m periods, various fill-factors, and four $x-$field sizes per pattern\\		
-	\cline{5-5}
-	TJ08a & CZ wafer & SIGRTTST8 & May 16, 2011 & A single full pattern size trial wafer for the 15.4 $\mu$m period contacted grism element, pathfinder for D08\\
-	\cline{5-5}
-	TJ08b & D08 & SIGRTTST8 & May 18, 2011 & 6$^{\circ}$ substrate with two 40 mm square patterns consisting of 15.4 $\mu$m period lines, this grism will serve as the LM cross disperser element in the contacted grisms project, the redundant patterns allow for a backup device\\	
-	\cline{5-5}
-	TJ09 & D07 & SIGRTTST9 & Aug 31, 2011 & 6$^{\circ}$ substrate with two 40 mm square patterns consisting of 7.8 $\mu$m period lines, this grism will serve as the HK cross disperser element in the contacted grisms project, the redundant patterns allow for a backup device\\	
-	\cline{5-5}
-	TJ10 & E12 & SIGRTTS10 & Sep 1, 2011 & R3 pattern, identical job definition file as SIGRTTST6, only added in a drift and current check every 10 minutes\\
-	\cline{5-5}
-	? & Wafer & SIGRTTS?? & Oct 3-7, 2011 & 80 $\mu$m pitch iSHELL pattern (on wafer) \\
-	\cline{5-5}
-	? & G09 & SIGRTTS?? & Mar 9- 15, 2012 & 80 $\mu$m pitch iSHELL pattern on 30 mm thick Si puck \\	
-	\cline{5-5}
-	? & Wafer & Negtest2 & Mar 13, 2012 & MaN-2405 process and adhesion tests, SEMs\\		
-	\cline{5-5}
-	? & Wafer & SIGRTTS?? & Jan 6-12, 2013 & 48.5 $\mu$m pitch iSHELL pattern (on wafer) \\		
-	\cline{5-5}
-	? & Wafer & Negtest2 & Jan 8, 2013 & MaN-2405 test writes on wafer: 500 - 3500 $\mu$C/cm$^2$, SEMs\\
-	\cline{5-5}
-	? & Wafer & SIGRTUT19 (verify) & Feb 11-15, 2013 & MaN-2405 12 $\times$ 16 mm$^2$ pattern wafer\\	
-	\cline{5-5}
-	? & G07 & SIGRTUT15 & April 9, 2014 & 30 mm thick iSHELL 80 $\mu$m pattern\\
-	\hline
-	%\end{tabular}
-\end{longtable}
-\end{landscape}	
-
 
 
 \bibliography{SPIE_2014_ebeam}   %>>>> bibliography data in report.bib
