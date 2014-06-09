@@ -26,7 +26,7 @@
 %  can be indicated with a superscript in italics, 
 %  which is easily obtained with \supit{}.
 
-\author{Michael Gully-Santiago\supit{a}, Daniel T. Jaffe\supit{a}, Cythia Brooks\supit{a}, Dan Wilson\supit{b}, Richard Muller\supit{b}
+\author{Michael Gully-Santiago\supit{a}, Daniel T. Jaffe\supit{a}, Cynthia Brooks\supit{a}, Dan Wilson\supit{b}, Richard Muller\supit{b}
 \skiplinehalf
 \supit{a}University of Texas at Austin Department of Astronomy, 2515 Speedway St, Austin, TX, USA; \\
 \supit{b}NASA JPL Microdevices Lab, 4800 Oak Grove Dr, Pasadena, CA, USA
@@ -217,10 +217,10 @@ The field size is only a few times larger than our typical coarse echelle gratin
 \begin{figure}
 \begin{center}
  \begin{tabular}{c}
-    \includegraphics[width=0.6\textwidth]{figs/Field_stitching_errors.pdf}
+    \includegraphics[width=0.6\textwidth]{figs/Field_stitching_errors_alt.pdf}
    \end{tabular}
   \end{center}
-  \caption[Field Stitching Error Cartoon]{\label{fig:FieldCartoon} An exaggerated cartoon to demonstrate the repetitive nature of field stitching.  A typical field size is about 300-500 $\mu$m on a side, and typical groove periods, $\sigma$, are about 20-100 $\mu$m (50-10 lines/mm groove frequencies).  There are only a few to tens of grooves per field.  The distortion shown in the cartoon is highly exaggerated, and in reality the calibration is much better than depicted.  Additionally, the morphology of the distortion is not well characterized.  We have depicted a parallelogram shape, though the realized morphology could be more like pincushion or barrel distortion.  The fields could also be perfectly square and simply misplaced in their center positions, still causing errors.  The details of the morphology might give rise to differing relative levels of harmonics, in a Fourier sense.  To put the scale in perspective, we coarsely estimate the repetitive position error amplitude A (cf. eq. \ref{eqn:Periodic}) as about 5-50 nm from experiments on e-beam wafers.  Compare this minuscule position error with the $\sim500 \; \mu$m field size, to see that the fractional position error is 1 part in $10^4$ or better.}
+  \caption[Field Stitching Error Cartoon]{\label{fig:FieldCartoon} An exaggerated cartoon to demonstrate the repetitive nature of field stitching.  A typical field size is about 300-500 $\mu$m on a side, and typical groove periods, $\sigma$, are about 20-100 $\mu$m (50-10 lines/mm groove frequencies).  Here we show 5 grooves per field.  The distortion shown in the cartoon is highly exaggerated, and in reality the calibration is much, much better than depicted.  The actual morphology of the distortion is not well characterized.  We have depicted a pincushion shape, though the realized morphology could be more like barrel distortion or a parallelogram.  The fields could also be perfectly square and simply misplaced in their center positions, still causing errors.  The details of the morphology might give rise to differing relative levels of harmonics, in a Fourier sense.  To put the scale in perspective, we coarsely estimate the repetitive position error amplitude A (cf. eq. \ref{eqn:Periodic}) as about 5-50 nm from experiments on e-beam wafers.  Compare this minuscule position error with the $\sim500 \; \mu$m field size, to see that the fractional position error is 1 part in $10^4$ or better.}
 \end{figure}
 
 In principle it is possible to predict the ghost levels relative to the main diffraction peak, given some information about the magnitude and shape of the field distortion.  As the amplitude of the field distortion is dialed up, the grating ghost level increases approximately as Equation \ref{eqn:GLevel}.  In practice, we have not directly mapped the field distortion, which we expect to be a function of both $x $ and $y$.  We have measured the ghost levels, and report them in Section \ref{sec:MeasGhost}.
