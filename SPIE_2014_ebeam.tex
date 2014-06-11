@@ -79,7 +79,7 @@ There are large scale, smooth correlations:
 \begin{eqnarray}
 \epsilon_n = \epsilon_n(x, y) \label{eqn:smooth}
 \end{eqnarray}
-These errors manifest as low order optical aberrations and degrade the PSF and Strehl.  Operationally these smooth errors are the first $M$ Zernike polynomials, where $M < 200$.  There is the especially pernicious repetitive error:
+These errors manifest as low order optical aberrations and degrade the PSF and Strehl.  Operationally these smooth errors correspond to the first $M$ Zernike polynomials in an orthonormal expansion of the wavefront, where $M < 200$.  There is the especially pernicious repetitive error:
 \begin{eqnarray}
 \epsilon_n = A\sin{\frac{2\pi n\sigma}{P} - \phi} \label{eqn:Periodic}
 \end{eqnarray}
@@ -91,7 +91,7 @@ where $ \sim \mathcal{N}(0, c)$ denotes that the error is normally distributed w
 
 \section{On-sky performance of Si immersion grating}
 
-With the commissioning of IGRINS \cite{2010SPIE.7735E..54Y}, we have demonstrated that the immersion grating performance measured in the laboratory translates into performance in a read world instrument in the field.  IGRINS is a high resolution near-infrared astronomical spectrograph.  It employs an immersion grating as its primary dispersive element, and two cryogenic VPH gratings for cross-dispersion.  The instrument covers a wavelength range of 1.5$-$2.5 $\mu$m in two channels.  The design and early performance of IGRINS is described in this volume [talk 9147-48]\cite{2014SPIE.CHANPARK.IGRINS}.  The immersion grating for IGRINS is internal part number CA-1a.  Its lab-measured performance is summarized in Gully-Santiago et al. 2012\cite{2012SPIE.8450E..2SG}.
+With the commissioning of IGRINS \cite{2010SPIE.7735E..54Y}, we have demonstrated that the immersion grating performance measured in the laboratory translates into performance in a real world instrument in the field.  IGRINS is a high resolution near-infrared astronomical spectrograph.  It employs an immersion grating as its primary dispersive element, and two cryogenic VPH gratings for cross-dispersion.  The instrument covers a wavelength range of 1.5$-$2.5 $\mu$m in two channels.  The design and early performance of IGRINS is described in this volume [talk 9147-48]\cite{2014SPIE.CHANPARK.IGRINS}.  The immersion grating for IGRINS is internal part number CA-1a.  Its lab-measured performance is summarized in Gully-Santiago et al. 2012\cite{2012SPIE.8450E..2SG}.
 
 IGRINS has no measured performance limitation attributable to the immersion grating.  CA-1a is diffraction limited.  CA-1a has been thermally cycled $>10$ times at the time of writing, with no perceptible degradation in performance.  We expect no degradation from thermal cycling.  We have previously constrained the CA-1a blaze angle to $\delta = 71.5\pm 0.2^\circ$.  The overall instrument throughput is consistent with the expected throughput including the laboratory-measured diffraction efficiency of CA-1a.
 
@@ -111,7 +111,7 @@ The JPL Microdevices Laboratory has a high-end electron beam writer (a JEOL mode
 Electron beam lithography is more precise than contact lithography.  The figure of merit for precision in e-beam lithography is the \emph{spot size}, the typical diameter of the e-beam pulse at the location of the e-beam sensitive resist on the substrate surface.  E-beam spot sizes on the JEOL 9300FS tool can be as low as 2 nm.  Admittedly the e-beam current at a 2 nm spot size is prohibitively low.  In practice, a 200 nm spot size is used.  The final precision is a small fraction of the spot size, since many adjacent spots are convolved together.  In later sections we directly compare the performance of immersion gratings produced with e-beam and contact lithography to show evidence that we have achieved much higher precision in e-beam lithography.  
 
 \subsection{Motivation \#2: Finer groove pitch capability}
-Owing to its small achievable spot size, electron beam lithography can reach finer groove spacings than contact photolithography can.  Fine pitches are required for high dispersion in low order.  Our groups are currently designing a fine pitch ($\sigma \; \sim$ 2 $\mu$m, line frequency $\sim 500$ lines/mm) pattern immersion grating for the NASA Earth Science Technology Office (ESTO) Advanced Component Technologies (ACT) program.  The ACT mission concept requires high spectral resolution at low order ($\sim1-10$).  The desired first and second order gratings cannot be made with contact lithography.  Higher order devices can be made with contact lithography, but suffer from order overlap and reduced bandwidth.
+Owing to its small achievable spot size, electron beam lithography can reach finer groove spacings than contact photolithography can.  Fine pitches are required for high dispersion in low order.  Our group is currently designing a fine pitch ($\sigma \; \sim$ 2 $\mu$m, line frequency $\sim 500$ lines/mm) pattern immersion grating for the NASA Earth Science Technology Office (ESTO) Advanced Component Technologies (ACT) program.  The ACT mission concept requires high spectral resolution at low order ($\sim1-10$).  The desired first and second order gratings cannot be made with contact lithography.  Higher order devices can be made with contact lithography, but suffer from order overlap and reduced bandwidth.
 
 
 \section{e-beam patterning strategies}
@@ -129,7 +129,7 @@ E-beam patterning takes place within a hierarchy of increasing scale-sizes.  The
 \end{figure}
 
 
-There are five key pattern scale sizes in e-beam lithography.  These scales are typical among e-beam tools, though we focus our discussion to the scales relevant to the JEOL 9300FS.  The scale sizes in order of small to large scales are step size, spot size, subfield deflector size, field deflector size, and stage range of motion.  Figure \ref{fig:Hierarchy} shows a cartoon of the hierarchy from left to right- field, subfields, and steps.
+There are a five key pattern scale sizes in e-beam lithography.  These scales are typical among e-beam tools, though we focus our discussion to the scales relevant to the JEOL 9300FS.  The scale sizes in order of small to large scales are 1) step size, 2) spot size, 3) subfield deflector size, 4) field deflector size, and 5) stage range of motion.  Figure \ref{fig:Hierarchy} shows a cartoon of the hierarchy from left to right- field, subfields, and steps.
 
 Table \ref{tab:D07andE12} lists the pattern size scales for two immersion grating prototypes, parts D07 and E12.  These prototypes are examples of successful pattern designs.  D07 and E12 were both patterned on 10 mm thick Si pucks.  A 10 mm thickness is sufficient for the piece to maintain its flatness after anisotropic etching of the grooves so that interferometric measurements will reflect accurately the effectiveness of the patterning step.
 
