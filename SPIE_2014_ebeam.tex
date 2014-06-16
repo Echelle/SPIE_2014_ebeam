@@ -26,33 +26,27 @@
 %  can be indicated with a superscript in italics, 
 %  which is easily obtained with \supit{}.
 
-\author{Michael Gully-Santiago\supit{a}, Daniel T. Jaffe\supit{a}, Cynthia B. Brooks\supit{a}, Dan Wilson\supit{b}, Richard Muller\supit{b}
+\author{Michael A. Gully-Santiago\supit{a}, Daniel T. Jaffe\supit{a}, Cynthia B. Brooks\supit{a}, Dan W. Wilson\supit{b}, Richard E. Muller\supit{b}
 \skiplinehalf
-\supit{a}University of Texas at Austin Department of Astronomy, 2515 Speedway St, Austin, TX, USA; \\
-\supit{b}NASA JPL Microdevices Lab, 4800 Oak Grove Dr, Pasadena, CA, USA
+\supit{a}University of Texas at Austin Department of Astronomy, 2515 Speedway St, Austin, Texas, USA; 
+\skiplinehalf 
+\supit{b}Jet Propulsion Laboratory, California Institute of Technology, 4800 Oak Grove Drive, Pasadena, California, USA 91109-8099
 }
 
-%>>>> Further information about the authors, other than their 
-%  institution and addresses, should be included as a footnote, 
-%  which is facilitated by the \authorinfo{} command.
 
 \authorinfo{Further author information: (Send correspondence to M.G.S)\\M.G.S: E-mail: gully@astro.as.utexas.edu}
-%%>>>> when using amstex, you need to use @@ instead of @
- 
 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% 
 %>>>> uncomment following for page numbers
 % \pagestyle{plain}    
 %>>>> uncomment following to start page numbering at 301 
-%\setcounter{page}{301} 
- 
+%\setcounter{page}{301}  
 
 \begin{document} 
   \maketitle 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% 
 \begin{abstract}
-Infrared spectrographs employing silicon immersion gratings can be significantly more compact than spectrographs using front-surface gratings.  The Si gratings can also offer continuous wavelength coverage at high spectral resolution.  The grooves in Si gratings are made with semiconductor lithography techniques, to date almost entirely using contact mask photolithography.  Planned near-infrared astronomical spectrographs require either finer groove pitches or higher positional accuracy than standard UV contact mask photolithography can reach.  A collaboration between the University of Texas at Austin Silicon Diffractive Optics Group and the NASA JPL Microdevices Lab has experimented with direct writing silicon immersion grating grooves with electron beam lithography.  The patterning process involves depositing positive e-beam resist on 1 to 30 mm thick, 100 mm diameter monolithic crystalline silicon substrates.  We then use the facility JEOL 9300FS e-beam writer at JPL to produce the linear pattern that defines the gratings.
+Infrared spectrographs employing silicon immersion gratings can be significantly more compact than spectrographs using front-surface gratings.  The Si gratings can also offer continuous wavelength coverage at high spectral resolution.  The grooves in Si gratings are made with semiconductor lithography techniques, to date almost entirely using contact mask photolithography.  Planned near-infrared astronomical spectrographs require either finer groove pitches or higher positional accuracy than standard UV contact mask photolithography can reach.  A collaboration between the University of Texas at Austin Silicon Diffractive Optics Group and the Jet Propulsion Laboratry Microdevices Laboratory has experimented with direct writing silicon immersion grating grooves with electron beam lithography.  The patterning process involves depositing positive e-beam resist on 1 to 30 mm thick, 100 mm diameter monolithic crystalline silicon substrates.  We then use the facility JEOL 9300FS e-beam writer at JPL to produce the linear pattern that defines the gratings.
 
 There are three key challenges to produce high-performance e-beam written silicon immersion gratings.  (1) E-beam field and subfield stitching boundaries cause periodic cross-hatch structures along the grating grooves.   The structures manifest themselves as spectral and spatial dimension ghosts in the diffraction limited point spread function (PSF) of the diffraction grating.  In this paper, we show that the effects of e-beam field boundaries must be mitigated.  We have significantly reduced ghost power with only minor increases in write time by using four or more reticles of less than 500 $\mu$m. (2) The finite e-beam stage drift and run-out error cause large-scale structure in the wavefront error.  We deal with this problem by applying a mark detection loop to check for and correct out minuscule stage drifts.  We measure the level and direction of stage drift and show that mark detection reduces peak-to-valley wavefront error by a factor of 5. (3) The serial write process for typical gratings yields write times of about 24 hours- this makes prototyping costly.  We discuss work with negative e-beam resist to reduce the fill factor of exposure, and therefore limit the exposure time.
 We also discuss the tradeoffs of long write-time serial write processes like e-beam with UV photomask lithography.  We show the results of experiments on small pattern size prototypes on Silicon wafers.  Current prototypes now exceed 30 dB of suppression on spectral and spatial dimension ghosts compared to monochromatic spectral purity measurements of the backside of Si echelle gratings in reflection at 632 nm.  We perform interferometry at 632 nm in reflection with a 25 mm circular beam on a grating with a blaze angle of 71.6$^\circ$.  The measured wavefront error is 0.17 waves peak to valley.
