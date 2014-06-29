@@ -11,7 +11,6 @@ all: SPIE_2014_ebeam.pdf
 	mv SPIE_2014_ebeam.pdf final/
 	mv SPIE_2014_ebeam.tex final/
 	rm -rf *Notes.bib
-	rm -rf *.bbl
 	rm -rf *.log
 	rm -rf *.blg
 	rm -rf *.dvi
@@ -22,7 +21,6 @@ all: SPIE_2014_ebeam.pdf
 	pdflatex SPIE_2014_ebeam
 	pdflatex SPIE_2014_ebeam
 	rm -rf *Notes.bib
-	rm -rf *.bbl
 	rm -rf *.aux
 	rm -rf *.log
 	rm -rf *.blg
